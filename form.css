@@ -193,3 +193,11 @@ input{
 	position: relative;
 	left: 135px;
 }
+
+.scroll {
+  display: inline-block;
+  text-align: left;
+  max-width: 250px;
+  padding-left: 25px;
+  overflow-x: scroll;
+}
