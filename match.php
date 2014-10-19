@@ -1,5 +1,8 @@
 <?php
-$number = $_GET['number'];
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$phone = $_GET['phone'];
 $name = $_GET['name'];
 ?>
 <!DOCTYPE html>
