@@ -52,7 +52,7 @@ $('#final').fadeOut("slow", function() {
 	$('#final').attr("src","me.png");
 	$('#final').fadeIn("slow", function () {
 		$("#leftm").animate({ 
-					  left: "-=130px",
+					  left: "-=140px",
 		}, 1000, function () {
 			$("#rightm").css("visibility","visible");
 		});
