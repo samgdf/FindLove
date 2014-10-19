@@ -7,59 +7,81 @@ if (isset($_GET['start'])) {
 		while (($buffer = fgets($handle, 4096)) !== false) {
 			$count++;
 			if ($count == $start) {
-				$out = '{"a":{';
+				$out = '{"users":[{';
 				$out .= '"status":1,';
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"name":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"gender":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"age":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"email":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"language":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"college":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"quote":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"religion":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"who":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"comment":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"phone":"'.$buffer.'"';
 
 				$buffer = fgets($handle, 4096);
 				if ($buffer == false) {
-					$out .= '}, "b":{"status":-1}}';
+					$out .= '}, {"status":-1}]}';
 					die($out);
 				}
 
-				$out .= '"}, "b":{"status":1,';
+				$out .= '}, {"status":1,';
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"name":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"gender":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"age":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"email":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"language":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"college":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"quote":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"religion":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"who":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"comment":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
+				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"phone":"'.$buffer.'"';
-				$out .= '}}';
+				$out .= '}]}';
 				die($out);
 			}
 		}
@@ -85,21 +107,22 @@ if (isset($_GET['start'])) {
 	<body>
 		<script>
 			var curLoad = 0;
+			loadMore();
 			function loadMore() {
 				var url = "info.php?start=";
 				if (curLoad == 0)
-					url = url + "1";
-				else {
+					curLoad += 1;
+				else
 					curLoad += 22;
-					url = url + curLoad;
-				}
+				url = url + curLoad;
 				$.get( url, function( data ) {
 					console.log(data);
 					if (data == -1)
 						return;
 
-					var a = data.a;
-					var b = data.b;
+					var obj = JSON.parse(data);
+					var a = obj.users[0];
+					var b = obj.users[1];
 					if (a.gender == "girl")
 						$("#gender1").html("Gender: <img src=\"girl.png\" height=\"20\" width=\"20\">");
 					else
@@ -113,7 +136,7 @@ if (isset($_GET['start'])) {
 					$("#college1").html("College: "+ a.college);
 					$("#quote1").html("Quote: "+ a.quote);
 					$("#who1").html("Looking For: "+ a.who);
-					$("#comments1").html("Additional Info: "+ a.comments);
+					$("#comments1").html("Additional Info: "+ a.comment);
 
 					if (b.status == -1)
 						return;
@@ -131,13 +154,13 @@ if (isset($_GET['start'])) {
 					$("#college2").html("College: "+ b.college);
 					$("#quote2").html("Quote: "+ b.quote);
 					$("#who2").html("Looking For: "+ b.who);
-					$("#comments2").html("Additional Info: "+ b.comments);
+					$("#comments2").html("Additional Info: "+ b.comment);
 				});
 			}
 		</script>
 
 		<div class="head">
-			<p><a href="#" class="nav"><img src="home.png" height="20" width="20"></a> <a href="reg.html" class="nav">Register</a> <a href="#" class="nava">More Info</a></p>
+			<p><a href="index.html" class="nav"><img src="home.png" height="20" width="20"></a> <a href="reg.html" class="nav">Register</a> <a href="info.php" class="nava">More Info</a></p>
 		</div>
 		<div class="inner">
 		<div class="scroll">
