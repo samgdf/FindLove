@@ -8,14 +8,15 @@
 	</head>
 	<body>
 		<script>
-var gender, name, age, email, languages, college, quote, religion, who, comments;
+var gender, name, age, email, language, college, quote, religion, who, comment;
 
 function genderSelect(g) {
 	gender = g;
 	$("#divGender").fadeOut("slow", function() {
-		$("#misc").fadeIn("slow");
+		$("#personal").fadeIn("slow");
 	});
 }
+
 function personalSubmit() {
 	name = $("#nameid").val();
 	age = $("#ageid").val();
@@ -24,7 +25,23 @@ function personalSubmit() {
 		$("#diverse").fadeIn("slow");
 	});
 }
+
 function diverseSubmit() {
+	language = $("#langid").val();
+	religion = $("#reliid").val();
+	college = $("#uniid").val();
+	$("#diverse").fadeOut("slow", function() {
+		$("#fun").fadeIn("slow");
+	});
+}
+
+function funSubmit() {
+	quote = $("#quoteid").val();
+	who = $("#whoid").val();
+	comment= $("#commentid").val();
+	$("#fun").fadeOut("slow", function() {
+		$("#searching").fadeIn("slow");
+	});
 }
 		</script>
 		<div class="head">
@@ -41,15 +58,18 @@ function diverseSubmit() {
 				<p>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="emailid" name="email" placeholder="you@website.com"></p>
 			</div>
 			<div id="diverse" style="display:none;">
-			<img src="eye.png" height="40" width="41"><p> Perfect. Let's get to business.</p><p>Languages &nbsp&nbsp<input type="text" name="lang" placeholder="english"></p>
-			<p>Beliefs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="reli" placeholder="religion"></p>
-			<p>University &nbsp&nbsp&nbsp&nbsp<input type="text" name="uni" placeholder="placeholder state"></p>
+			<img src="eye.png" height="40" width="41"><p> Perfect. Let's get to business.</p><p>Languages &nbsp&nbsp<input type="text" id="langid" name="lang" placeholder="english"></p>
+			<p>Beliefs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="reliid" name="reli" placeholder="religion"></p>
+			<p>University &nbsp&nbsp&nbsp&nbsp<input type="text" id="uniid" name="uni" placeholder="placeholder state"></p>
 			</div>
-			<div id="fun">
-			<img src="word.png" height="40" width="41"><p> Almost done.</p><p>Favorite quote &nbsp&nbsp<input type="text" name="quote" placeholder="to be or not to be"></p>
-			<p>Looking for &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="look" placeholder="love"></p>
-			<p>Comments &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="comment" placeholder="anything"></p>
+			<div id="fun" style="display:none;">
+			<img src="word.png" height="40" width="41"><p> Almost done.</p><p>Favorite quote &nbsp&nbsp<input type="text" id="quoteid" name="quote" placeholder="to be or not to be"></p>
+			<p>Looking for &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="whoid" name="look" placeholder="love"></p>
+			<p>Comments &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="commentid" name="comment" placeholder="anything"></p>
 			</div>			
+			<div id="searching" style="display:none;">
+				<img src="loading.gif">
+			</div>
 		</div>
 		<div class="foot">
 			<p>Frontend by <a target="_blank" href="http://www.twitter.com/samgdf">Sam Goldfield</a>, backend by <a target="_blank" href="https://www.facebook.com/Gazmanov">Nikolay Feldman</a>, icons by <a target="_blank" href="https://icomoon.io/linearicons.html">LinearIcons</a>, and photography by <a target="_blank" href="http://www.gotchagoodside.com/">Gotcha Good Side</a>.</p>
