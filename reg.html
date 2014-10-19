@@ -40,7 +40,11 @@ function funSubmit() {
 	who = $("#whoid").val();
 	comment= $("#commentid").val();
 	$("#fun").fadeOut("slow", function() {
-		$("#searching").fadeIn("slow");
+		$("#searching").fadeIn("slow", function() {
+			 setInterval(function () {
+			 	$(location).attr('href', "match.html");
+			 }, 3000);
+		});
 	});
 }
 		</script>
