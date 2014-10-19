@@ -43,7 +43,6 @@ function funSubmit() {
 	$("#fun").fadeOut("slow", function() {
 		$("#searching").fadeIn("slow", function() {
 			$.get( "record.php?name="+name+"&gender="+gender+"&age="+age+"&email="+email+"&language="+language+"&college="+college+"&quote="+quote+"&religion="+religion+"&who="+who+"&comment="+comment+"&phone="+phone, function( data ) {
-				alert("recorded");
 				console.log(data);
 			});
 			setInterval(function () {

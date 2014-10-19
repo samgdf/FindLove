@@ -16,7 +16,9 @@ $name = $_GET['name'];
 	<body>
 		<script>
 			function sendMessage() {
-				
+				$.get( "message.php?name=<?php echo $name; ?>&phone=<?php echo $phone;?>", function( data ) {
+					console.log(data);
+				});
 			}
 		</script>
 		<div class="head">
