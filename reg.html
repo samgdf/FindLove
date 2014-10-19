@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<script>
-var gender, name, age, email, language, college, quote, religion, who, comment;
+var gender, name, age, email, language, college, quote, religion, who, comment, phone;
 
 function genderSelect(g) {
 	gender = g;
@@ -21,6 +21,7 @@ function personalSubmit() {
 	name = $("#nameid").val();
 	age = $("#ageid").val();
 	email = $("#emailid").val();
+	phone = $("#phoneid").val();
 	$("#personal").fadeOut("slow", function() {
 		$("#diverse").fadeIn("slow");
 	});
@@ -41,7 +42,7 @@ function funSubmit() {
 	comment= $("#commentid").val();
 	$("#fun").fadeOut("slow", function() {
 		$("#searching").fadeIn("slow", function() {
-			$.get( "record.php?name="+name+"&gender="+gender+"&age="+age+"&email="+email+"&language="+language+"&college="+college+"&quote="+quote+"&religion="+religion+"&who="+who+"&comment="+comment, function( data ) {
+			$.get( "record.php?name="+name+"&gender="+gender+"&age="+age+"&email="+email+"&language="+language+"&college="+college+"&quote="+quote+"&religion="+religion+"&who="+who+"&comment="+comment+"&phone="+phone, function( data ) {
 				alert("recorded");
 			});
 			setInterval(function () {
