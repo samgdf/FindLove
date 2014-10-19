@@ -28,7 +28,7 @@ $name = $_GET['name'];
 		<div id="leftm">
 			<p>You are a 100% match with</p>
 			<img id="final" src="mesl.png" height="460" width="203"></br></br>
-			<a class="btn" href="#" onclick="sendMessage()">Send a message</a> &nbsp&nbsp<!-- <a class="btn" href="#">Send your video</a> -->
+			<a class="btn" href="#" onclick="sendMessage()">Join Sam on GroupMe!</a> &nbsp&nbsp<!-- <a class="btn" href="#">Send your video</a> -->
 			</div>
 			<div id="rightm">
 			<p>Gender: male</p>
