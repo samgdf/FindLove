@@ -12,6 +12,9 @@ var gender, age, email, ethnicity, college, quote, religion, who, comments;
 
 function genderSelect(g) {
 	gender = g;
+	$("#divGender").fadeOut("slow", function() {
+		$("#misc").fadeIn("slow");
+	});
 }
 		</script>
 		<div class="head">
