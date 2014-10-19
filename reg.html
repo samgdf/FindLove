@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Registration</title>
-	<link rel="stylesheet" href="form.css" type="text/css" media="screen">
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<div class="head">
-	<p><a href="index.html" class="nav"><img src="home.png" height="20" width="20"></a> <a href="#" class="nava">Register</a> <a href="#" class="nav">Log In</a> <a href="#" class="nav">More Info</a></p>
-</div>
-<div class="inner">
-<p>Just answer a few questions, please.</p>
-<img src="girl.png" height="40" width="41"> or <img src="male.png">
-</div>
-<div class="foot">
+	<head>
+		<title>Registration</title>
+		<link rel="stylesheet" href="form.css" type="text/css" media="screen">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
+	</head>
+	<body>
+		<script>
+var gender, age, email, ethnicity, college, quote, religion, who, comments;
+
+function genderSelect(g) {
+	gender = g;
+}
+		</script>
+		<div class="head">
+			<p><a href="index.html" class="nav"><img src="home.png" height="20" width="20"></a> <a href="#" class="nava">Register</a> <a href="#" class="nav">Log In</a> <a href="#" class="nav">More Info</a></p>
+		</div>
+		<div class="inner">
+			<p>Just answer a few questions, please.</p>
+			<div id="divGender">
+				<img onclick="genderSelect('girl');" src="girl.png" height="40" width="41"> or <img onclick="genderSelect('boy');" src="male.png">
+			</div>
+		</div>
+		<div class="foot">
 	<p>Frontend by <a target="_blank" href="http://www.twitter.com/samgdf">Sam Goldfield</a>, backend by <a target="_blank" href="https://www.facebook.com/Gazmanov">Nikolay Feldman</a>, icons by <a target="_blank" href="https://icomoon.io/linearicons.html">LinearIcons</a>, and photography by <a target="_blank" href="http://www.gotchagoodside.com/">Gotcha Good Side</a>.</p>
-</div>
-</body>
+		</div>
+	</body>
 </html>
