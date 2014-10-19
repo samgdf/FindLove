@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<script>
-var gender, age, email, ethnicity, college, quote, religion, who, comments;
+var gender, name, age, email, languages, college, quote, religion, who, comments;
 
 function genderSelect(g) {
 	gender = g;
@@ -21,9 +21,19 @@ function genderSelect(g) {
 			<p><a href="index.html" class="nav"><img src="home.png" height="20" width="20"></a> <a href="#" class="nava">Register</a> <a href="#" class="nav">Log In</a> <a href="#" class="nav">More Info</a></p>
 		</div>
 		<div class="inner">
-			<p>Just answer a few questions, please.</p>
-			<div id="divGender">
+			<div id="divGender" style="display:none;">
+				<p>Just answer a few questions, please.</p>
 				<img onclick="genderSelect('girl');" src="girl.png" height="40" width="41"> or <img onclick="genderSelect('boy');" src="male.png">
+			</div>
+			<div id="personal" style="display:none;">
+				<img src="wink.png" height="40" width="41"><p> Great! Let's get personal.</p><p>Your name &nbsp&nbsp<input type="text" name="name" placeholder="first last"></p>
+				<p>Your age &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="age" placeholder="years young"></p>
+				<p>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="email" placeholder="you@website.com"></p>
+			</div>
+			<div id="diverse">
+			<img src="eye.png" height="40" width="41"><p> Perfect. Let's get to business.</p><p>Languages &nbsp&nbsp<input type="text" name="lang" placeholder="english"></p>
+			<p>Beliefs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="reli" placeholder="religion"></p>
+			<p>University &nbsp&nbsp&nbsp&nbsp<input type="text" name="uni" placeholder="placeholder state"></p>
 			</div>
 		</div>
 		<div class="foot">
