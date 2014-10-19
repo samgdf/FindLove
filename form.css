@@ -186,4 +186,10 @@ input{
   height: 100%;
   bottom: 85px;
   text-align: left;
+  visibility: hidden;
+}
+
+#leftm {
+	position: relative;
+	left: 135px;
 }

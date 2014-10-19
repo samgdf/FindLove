@@ -34,12 +34,15 @@
 		</div>
 
 		<script>
-$('#sampic').fadeOut("slow", function() {
-	$('#sampic').attr("src","me.png");
-	$('#sampic').fadeIn("slow");
-	$("#leftm").animate({ 
-		        left: "-=100px",
-		      }, duration );
+$('#final').fadeOut("slow", function() {
+	$('#final').attr("src","me.png");
+	$('#final').fadeIn("slow", function () {
+		$("#leftm").animate({ 
+					  left: "-=130px",
+		}, 1000, function () {
+			$("#rightm").css("visibility","visible");
+		});
+	});
 });
 		</script>
 	</body>
