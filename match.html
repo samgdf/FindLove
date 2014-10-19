@@ -4,6 +4,7 @@
 		<title>Love Found</title>
 		<link rel="stylesheet" href="form.css" type="text/css" media="screen">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+		<script src="js/jquery-2.1.1.min.js"></script>
 	</head>
 	<body>
 		<div class="head">
@@ -11,11 +12,21 @@
 		</div>
 		<div class="inner">
 			<p>You are a 100% match with</p>
-			<img src="mesl.png" height="460" width="203"></br></br>
+			<img src="mesl.png" height="460" width="203" id="sampic"></br></br>
 			<a class="btn" href="#">Send a message</a> &nbsp&nbsp<a class="btn" href="#">Send your video</a>
 		</div>
 		<div class="foot">
 			<p>Frontend by <a target="_blank" href="http://www.twitter.com/samgdf">Sam Goldfield</a>, backend by <a target="_blank" href="https://www.facebook.com/Gazmanov">Nikolay Feldman</a>, icons by <a target="_blank" href="https://icomoon.io/linearicons.html">LinearIcons</a>, and photography by <a target="_blank" href="http://www.gotchagoodside.com/">Gotcha Good Side</a>.</p>
 		</div>
+
+		<script>
+$('#sampic').fadeOut("slow", function() {
+	$('#sampic').attr("src","me.png");
+	$('#sampic').fadeIn("slow");
+	$("#leftm").animate({ 
+		        left: "-=100px",
+		      }, duration );
+});
+		</script>
 	</body>
 </html>
