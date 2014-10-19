@@ -8,38 +8,75 @@
 	</head>
 	<body>
 		<script>
-var gender, name, age, email, languages, college, quote, religion, who, comments;
+var gender, name, age, email, language, college, quote, religion, who, comment;
 
 function genderSelect(g) {
 	gender = g;
+	$("#divGender").fadeOut("slow", function() {
+		$("#personal").fadeIn("slow");
+	});
+}
+
+function personalSubmit() {
+	name = $("#nameid").val();
+	age = $("#ageid").val();
+	email = $("#emailid").val();
+	$("#personal").fadeOut("slow", function() {
+		$("#diverse").fadeIn("slow");
+	});
+}
+
+function diverseSubmit() {
+	language = $("#langid").val();
+	religion = $("#reliid").val();
+	college = $("#uniid").val();
+	$("#diverse").fadeOut("slow", function() {
+		$("#fun").fadeIn("slow");
+	});
+}
+
+function funSubmit() {
+	quote = $("#quoteid").val();
+	who = $("#whoid").val();
+	comment= $("#commentid").val();
+	$("#fun").fadeOut("slow", function() {
+		$("#searching").fadeIn("slow", function() {
+			 setInterval(function () {
+			 	$(location).attr('href', "match.html");
+			 }, 3000);
+		});
+	});
 }
 		</script>
 		<div class="head">
 			<p><a href="index.html" class="nav"><img src="home.png" height="20" width="20"></a> <a href="#" class="nava">Register</a> <a href="#" class="nav">More Info</a></p>
 		</div>
 		<div class="inner">
-			<div id="divGender" style="display:none;">
+			<div id="divGender" style="display:block;">
 				<p>Just answer a few questions, please.</p>
 				<img onclick="genderSelect('girl');" src="girl.png" height="40" width="41"> or <img onclick="genderSelect('boy');" src="male.png">
 			</div>
 			<div id="personal" style="display:none;">
-				<img src="wink.png" height="40" width="41"><p> Great! Let's get personal.</p><p>Your name &nbsp&nbsp<input type="text" name="name" placeholder="first last"></p>
-				<p>Your age &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="age" placeholder="years young"></p>
-				<p>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="email" placeholder="you@website.com"></p>
-				<button id="personalBtn">Next</button>
+				<img src="wink.png" height="40" width="41"><p> Great! Let's get personal.</p><p>Your name &nbsp&nbsp<input type="text" id="nameid" name="name" placeholder="first last"></p>
+				<p>Your age &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="ageid" name="age" placeholder="years young"></p>
+				<p>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="emailid" name="email" placeholder="you@website.com"></p>
+				<button id="personalBtn" onclick="personalSubmit();">Next</button>
 			</div>
 			<div id="diverse" style="display:none;">
-			<img src="eye.png" height="40" width="41"><p> Perfect. Let's get to business.</p><p>Languages &nbsp&nbsp<input type="text" name="lang" placeholder="english"></p>
-			<p>Beliefs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="reli" placeholder="religion"></p>
-			<p>University &nbsp&nbsp&nbsp&nbsp<input type="text" name="uni" placeholder="placeholder state"></p>
-			<button id="diverseBtn">Next</button>
+			<img src="eye.png" height="40" width="41"><p> Perfect. Let's get to business.</p><p>Languages &nbsp&nbsp<input type="text" id="langid" name="lang" placeholder="english"></p>
+			<p>Beliefs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="reliid" name="reli" placeholder="religion"></p>
+			<p>University &nbsp&nbsp&nbsp&nbsp<input type="text" id="uniid" name="uni" placeholder="placeholder state"></p>
+			<button id="diverseBtn" onclick="diverseSubmit();">Next</button>
 			</div>
-			<div id="fun">
-			<img src="word.png" height="40" width="41"><p> Almost done.</p><p>Favorite quote &nbsp&nbsp<input type="text" name="quote" placeholder="to be or not to be"></p>
-			<p>Looking for &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="look" placeholder="love"></p>
-			<p>Comments &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="comment" placeholder="anything"></p>
-			<button id="funBtn">Next</button>
+			<div id="fun" style="display:none;">
+			<img src="word.png" height="40" width="41"><p> Almost done.</p><p>Favorite quote &nbsp&nbsp<input type="text" id="quoteid" name="quote" placeholder="to be or not to be"></p>
+			<p>Looking for &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="whoid" name="look" placeholder="love"></p>
+			<p>Comments &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="commentid" name="comment" placeholder="anything"></p>
+			<button id="funBtn" onclick="funSubmit();">Next</button>
 			</div>			
+			<div id="searching" style="display:none;">
+				<img src="loading.gif">
+			</div>
 		</div>
 		<div class="foot">
 			<p>Frontend by <a target="_blank" href="http://www.twitter.com/samgdf">Sam Goldfield</a>, backend by <a target="_blank" href="https://www.facebook.com/Gazmanov">Nikolay Feldman</a>, icons by <a target="_blank" href="https://icomoon.io/linearicons.html">LinearIcons</a>, and photography by <a target="_blank" href="http://www.gotchagoodside.com/">Gotcha Good Side</a>.</p>
