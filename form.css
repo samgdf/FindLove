@@ -61,6 +61,31 @@ a.btn {
   border-radius: 5px;
 }
 
+button {
+  padding: 5px 15px 5px 15px;
+  border: 1px solid rgb(150,150,150);
+  color: rgb(150,150,150);
+  background: rgb(255,255,255);
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif; font-weight: 300;
+  font-size: 18px;
+}
+
+button:hover, button:active {
+  padding: 5px 15px 5px 15px;
+  border: 1px solid rgb(150,150,150);
+  color: rgb(150,150,150);
+  background: rgb(230,230,230);
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif; font-weight: 300;
+  font-size: 18px;
+  transition: 0.4s all;
+  -webkit-transition: 0.4s all;
+  -moz-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  -ms-transition: 0.4s all;
+}
+
 .head {
   position: absolute;
   top: 0%;
