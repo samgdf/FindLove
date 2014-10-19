@@ -27,10 +27,10 @@ if (isset($_GET['start'])) {
 				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"college":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
-				$buffer = str_replace(array("\n", "\r"), '', $buffer);
+				$buffer = str_replace(array("\n", "\r", "\""), '', $buffer);
 				$out .= '"quote":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
-				$buffer = str_replace(array("\n", "\r"), '', $buffer);
+				$buffer = str_replace(array("\n", "\r","\""), '', $buffer);
 				$out .= '"religion":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
 				$buffer = str_replace(array("\n", "\r"), '', $buffer);
@@ -67,10 +67,10 @@ if (isset($_GET['start'])) {
 				$buffer = str_replace(array("\n", "\r"), '', $buffer);
 				$out .= '"college":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
-				$buffer = str_replace(array("\n", "\r"), '', $buffer);
+				$buffer = str_replace(array("\n", "\r", "\""), '', $buffer);
 				$out .= '"quote":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
-				$buffer = str_replace(array("\n", "\r"), '', $buffer);
+				$buffer = str_replace(array("\n", "\r", "\""), '', $buffer);
 				$out .= '"religion":"'.$buffer.'",';
 				$buffer = fgets($handle, 4096);
 				$buffer = str_replace(array("\n", "\r"), '', $buffer);
